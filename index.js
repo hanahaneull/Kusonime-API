@@ -12,17 +12,18 @@ const app = express();
 /* app */
 app.use(cors());
 app.use(helmet());
-app.use('/api', general);
-app.use('/api/anime', link);
+app.use('/kusonime', general);
+app.use('/kusonime/anime', link);
 app.use(express.static('./public'));
 
 /* Status */
-app.use('/api', async (req, res) => {
+app.use('/kusonime', async (req, res) => {
     
     res.send({
         status: true,
         message: 'Kusonime Scrapper',
-        repo: 'KatowProject'
+        repo: 'KatowProject',
+        branch: 'caching experiment'
     });
 
 });
